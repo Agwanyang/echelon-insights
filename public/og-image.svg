@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="1" cy="1" r="1">
+      <stop offset="0" stop-color="#FF5A1F" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#0A0A0A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rule" x1="64" y1="0" x2="1136" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF5A1F"/>
+      <stop offset=".52" stop-color="#F5F5F5" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#F5F5F5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <path d="M64 86h1072" stroke="#F5F5F5" stroke-opacity=".12"/>
+  <g transform="translate(64 126)">
+    <rect y="15" width="10" height="17" rx="1" fill="#F5F5F5"/>
+    <rect x="17" width="10" height="32" rx="1" fill="#F5F5F5"/>
+    <rect x="34" y="-15" width="10" height="47" rx="1" fill="#FF5A1F"/>
+    <text x="62" y="24" fill="#F5F5F5" font-family="Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="-0.5">ECHELON INSIGHTS</text>
+  </g>
+  <text x="64" y="330" fill="#F5F5F5" font-family="Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-4">We build what</text>
+  <text x="64" y="420" fill="#F5F5F5" font-family="Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="-4">needs to <tspan fill="#FF5A1F">exist.</tspan></text>
+  <path d="M64 493h1072" stroke="url(#rule)" stroke-width="2"/>
+  <text x="64" y="544" fill="#F5F5F5" fill-opacity=".62" font-family="Arial, sans-serif" font-size="20">A data-driven group. Evidence, outcomes, and the long view.</text>
+</svg>
