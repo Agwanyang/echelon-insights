@@ -2,7 +2,6 @@ import Reveal from "./Reveal";
 import { company, footer, nav, work } from "../content";
 import { trackEvent } from "../analytics";
 
-const services = ["Web Design", "Web Development", "Consulting", "Other"];
 const currentYear = new Date().getFullYear();
 const inputClass =
   "w-full rounded-xl border border-white/15 bg-black/25 px-4 py-3.5 text-base text-paper placeholder:text-paper/45 outline-none transition-colors focus:border-signal focus:ring-1 focus:ring-signal/40";
@@ -31,15 +30,13 @@ export default function WorkSection() {
     const email = String(formData.get("email") || "");
     const phone = String(formData.get("phone") || "");
     const companyName = String(formData.get("company") || "");
-    const service = String(formData.get("service") || "General");
     const message = String(formData.get("message") || "");
-    const subject = `Enquiry: ${service} - ${firstName} ${lastName}`;
+    const subject = `Enquiry: ${firstName} ${lastName}`;
     const body = [
       `Name: ${firstName} ${lastName}`,
       `Email: ${email}`,
       `Phone: ${phone || "-"}`,
       `Company: ${companyName || "-"}`,
-      `Area: ${service}`,
       "",
       message,
     ].join("\n");
@@ -89,9 +86,9 @@ export default function WorkSection() {
                   {invitation}
                   <a
                     href={`mailto:${company.email}`}
-                    className="font-normal text-paper underline decoration-signal underline-offset-4 transition-colors hover:text-signal"
+                    className="mx-1 inline-flex items-center rounded-full bg-signal px-4 py-1.5 align-baseline text-sm font-bold text-paper no-underline transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-[#ff7040] hover:shadow-[0_6px_20px_rgba(255,90,31,0.25)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper sm:text-base"
                   >
-                    <em>reach out.</em>
+                    reach out
                   </a>
                   {response}
                 </p>
@@ -99,9 +96,9 @@ export default function WorkSection() {
             </div>
           </div>
 
-          <div className="grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+          <div className="grid items-start gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:gap-7">
             <Reveal>
-              <form onSubmit={handleSubmit} className="work-form-glass rounded-3xl p-[clamp(1.25rem,4vw,2.5rem)]">
+              <form onSubmit={handleSubmit} className="work-form-glass w-full rounded-3xl p-[clamp(1.25rem,4vw,2.5rem)]">
                 <div className="mb-8 flex items-start justify-between gap-4 border-b border-white/10 pb-5">
                   <div>
                     <h3 className="text-2xl font-normal text-paper sm:text-3xl">
@@ -133,16 +130,6 @@ export default function WorkSection() {
                   </div>
                   <Field id="company" label="Company / organisation">
                     <input id="company" name="company" autoComplete="organization" placeholder="Optional" className={inputClass} />
-                  </Field>
-                  <Field id="service" label="Area of interest">
-                    <select id="service" name="service" defaultValue="" className={`${inputClass} appearance-none`}>
-                      <option value="" disabled>Select an area</option>
-                      {services.map((service) => (
-                        <option key={service} value={service} className="bg-ink">
-                          {service}
-                        </option>
-                      ))}
-                    </select>
                   </Field>
                   <Field id="message" label="Your message">
                     <textarea
